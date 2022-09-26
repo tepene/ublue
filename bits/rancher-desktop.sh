@@ -70,7 +70,7 @@ fi
 
 # Configure docker context
 # Set environment variable for fish
-if [ ~/.config/fish/config.fish ] && ! grep -Fq "DOCKER_CONTEXT" ~/.config/fish/fish_variables; then
+if [ -f ~/.config/fish/config.fish ] && ! grep -Fq "DOCKER_CONTEXT" ~/.config/fish/fish_variables; then
     echo "Configuring environment variable 'DOCKER_CONTEXT' for fish..."
     fish -c 'set -Ux DOCKER_CONTEXT "rancher-desktop"'
 fi
