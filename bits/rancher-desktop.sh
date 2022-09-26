@@ -20,6 +20,16 @@ echo "Press any key to continue, or control-c to exit"
 echo ""
 read -n1 -s
 
+# Create AppImage directroy
+if [ -d "$APP_IMAGE_DIR" ]; then
+    echo "Directory $APP_IMAGE_DIR does already exist"
+    echo ""
+else
+    echo "Creating directory $APP_IMAGE_DIR"
+    echo ""
+    mkdir $APP_IMAGE_DIR
+fi
+
 # Create Backup of existing AppImage
 if test -f "$APP_IMAGE_FULL_PATH"; then
     echo "Found existing Rancher Desktop AppImage"
